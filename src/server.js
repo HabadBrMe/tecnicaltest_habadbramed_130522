@@ -15,6 +15,6 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.use(router);
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`App listening on ${port}`);
   })
