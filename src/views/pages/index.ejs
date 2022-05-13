@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); -%>
+<body>
+    <%- include('../partials/header'); -%>
+    <%- include('../component/buttonfloat'); %>
+    <%- include('about') -%>
+    <% if (errors) { %>
+        <div class="errors">
+            <h1><%= errors %></h1>
+        </div>
+    <%} %>
+    <div class="search">
+        <form action="/" method="post">
+            <input type="search" name="search" id="search" placeholder="" required>
+            <input type="submit" value="Location Search">
+        </form>
+    </div>
+    <% if (location) { %>
+        <div class="location">
+            <ul>
+                <li>
+                    Name: <%= location[0].title %>
+                </li>
+                <li>
+                    Type: <%= location[0].location_type %>
+                </li>
+                <li>
+                    Earth ID: <%= location[0].woeid %>
+                </li>
+                <li>
+                    Lattitude and longitude: <%= location[0].latt_long %>
+                </li>
+            </ul>
+        </div>
+    <% } %>
+    <% if (forecasts) { %>
+        <div class="forecasts">
+            <% for (var i = 0; i < 6; i++){ %>
+                <%- include('../component/card', {"forecast":forecasts.consolidated_weather[i]}); %>
+            <% }; %>
+        </div>
+    <% } %>
+    <%- include('../partials/footer'); -%>
+</body>
+</html>

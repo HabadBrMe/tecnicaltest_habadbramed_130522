@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card__title">
+        <h1><%= forecast.applicable_date %></h1>
+    </div>
+    <img class="card__img" src="https://www.metaweather.com/static/img/weather/png/<%= forecast.weather_state_abbr%>.png" alt="weatherlogo">
+    <div class="card__body">
+      <h4><%= forecast.weather_state_name %></h4> 
+      <p>Temperature Max:<%= forecast.max_temp %>°C, Min:<%= forecast.min_temp %>°C</p> 
+      <p>Humidity: <%= forecast.humidity %></p>
+      <p>Visibility: <%= forecast.visibility %></p>
+      <p>Predictability: <%= forecast.predictability %></p>
+    </div>
+</div>

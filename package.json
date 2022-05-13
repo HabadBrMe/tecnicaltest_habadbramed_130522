@@ -1,0 +1,20 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "Aplicación de desarrollo para la prueba técnica de desarrollador front-end jr",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "star": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "Habad Bravo Medina",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.16"
+  }
+}
