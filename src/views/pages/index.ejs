@@ -13,25 +13,15 @@
     <div class="search">
         <form action="/" method="post">
             <input type="search" name="search" id="search" placeholder="" required>
-            <input type="submit" value="Location Search">
+            <input type="submit" class="button" value="Location Search">
         </form>
     </div>
     <% if (location) { %>
         <div class="location">
-            <ul>
-                <li>
-                    Name: <%= location[0].title %>
-                </li>
-                <li>
-                    Type: <%= location[0].location_type %>
-                </li>
-                <li>
-                    Earth ID: <%= location[0].woeid %>
-                </li>
-                <li>
-                    Lattitude and longitude: <%= location[0].latt_long %>
-                </li>
-            </ul>
+            Name: <span><%= location[0].title %></span>
+            Type: <span><%= location[0].location_type %></span>
+            Earth ID: <span><%= location[0].woeid %></span>
+            Lattitude and longitude: <span><%= location[0].latt_long %></span>
         </div>
     <% } %>
     <% if (forecasts) { %>
