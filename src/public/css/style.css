@@ -51,13 +51,33 @@ div{
 .menu__link:hover{
     transform: scale(1.2);
 }
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+.hamburger__bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  background: #ffaa00;
+}
 .about{
+  margin: 5%;
+  padding: 20px;
+}
+form{
   margin: 5%;
   padding: 20px;
 }
 form input{
   border-radius: 5px;
   height: 40px;
+}
+form input:focus, input:active{
+  border: 3px solid #ffaa00;
+  outline: none;
 }
 .button{
   background: #b3b3b3;
@@ -68,6 +88,15 @@ form input{
   color: white;
   transition: 0.5, linear;
 }
+.float{
+  border-radius: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+  z-index: 100;
+}
+
+
 .location{
   color: #b3b3b3;
   font-size: 30px;
@@ -82,9 +111,8 @@ form input{
     grid-gap: 5px;
 }
 .card {
-    background: #b3b3b3;
     border-radius: 10px;
-    border: 1px solid #ffaa00;
+    border: 2px solid #ffaa00;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: 10px;
@@ -108,7 +136,7 @@ footer{
 }
 
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 300px) {
   
   div{
     padding: 0;
@@ -118,7 +146,7 @@ footer{
     padding: auto;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (max-width: 700px) {
   div{
     padding: 0;
     margin: 0;
@@ -126,6 +154,18 @@ footer{
   .header__nav{
     padding: auto;
   }
+  .hamburger{
+    display: none;
+  }
+  .hamburger.active .hamburger__bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .hamburger__bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .hamburger__bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (max-width: 1000px) {
 }
